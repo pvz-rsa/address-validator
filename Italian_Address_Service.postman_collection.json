@@ -1,0 +1,592 @@
+{
+  "info": {
+    "name": "Italian Address Service",
+    "description": "Complete API collection for Italian Address Normalization Service with comprehensive Italian dataset coverage (151 CAPs, 140 comuni, 104 synonyms)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "2.0.0"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:10000",
+      "type": "string"
+    },
+    {
+      "key": "admin_token",
+      "value": "changeme",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Health check returns 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response has correct structure\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('status', 'healthy');",
+              "    pm.expect(jsonData).to.have.property('service', 'Italian Address Service');",
+              "    pm.expect(jsonData).to.have.property('timestamp');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seed Database",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Admin-Token",
+            "value": "{{admin_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/datasets/seed",
+          "host": ["{{base_url}}"],
+          "path": ["datasets", "seed"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Seeding successful\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Comprehensive dataset loaded\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.be.true;",
+              "    pm.expect(jsonData.data.caps_loaded).to.be.greaterThan(140);",
+              "    pm.expect(jsonData.data.comuni_loaded).to.be.greaterThan(130);",
+              "    pm.expect(jsonData.data.synonyms_loaded).to.be.greaterThan(100);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get Dataset Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/datasets/stats",
+          "host": ["{{base_url}}"],
+          "path": ["datasets", "stats"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Stats endpoint works\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Comprehensive dataset statistics\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.caps_count).to.be.greaterThan(140);",
+              "    pm.expect(jsonData.comuni_count).to.be.greaterThan(130);",
+              "    pm.expect(jsonData.synonyms_count).to.be.greaterThan(100);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Rome Complete Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via del Corso 123, 00184 Roma RM\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Rome address normalized correctly\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('00184');",
+              "    pm.expect(jsonData.normalized_address).to.include('Roma');",
+              "    pm.expect(jsonData.confidence).to.be.greaterThan(0.8);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Milan with English Name",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Corso Buenos Aires 45, Milan 20121\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Milan address with English name normalized\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('Milano');",
+              "    pm.expect(jsonData.normalized_address).to.include('20121');",
+              "    pm.expect(jsonData.components.comune).to.equal('Milano');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Venice Tourist Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Piazza San Marco, Venice 30122\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Venice address normalized with Italian name\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('Venezia');",
+              "    pm.expect(jsonData.normalized_address).to.include('30122');",
+              "    pm.expect(jsonData.components.comune).to.equal('Venezia');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Naples Complex Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via Toledo 200, 80142 Napoli Campania\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Naples address normalized correctly\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('80142');",
+              "    pm.expect(jsonData.normalized_address).to.include('Napoli');",
+              "    pm.expect(jsonData.components.provincia).to.equal('NA');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Sicily Address (Palermo)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via Maqueda 100, 90121 Palermo Sicily\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Sicily address normalized correctly\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('90121');",
+              "    pm.expect(jsonData.normalized_address).to.include('Palermo');",
+              "    pm.expect(jsonData.components.provincia).to.equal('PA');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Turin (English to Italian)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via Po 18, Turin 10121\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Turin translated to Torino\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('Torino');",
+              "    pm.expect(jsonData.normalized_address).to.include('10121');",
+              "    pm.expect(jsonData.components.comune).to.equal('Torino');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Florence Incomplete",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Ponte Vecchio, Florence\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Florence incomplete address handled\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('Firenze');",
+              "    pm.expect(jsonData.confidence).to.be.lessThan(0.9);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - Bologna University District",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via Zamboni 33, 40121 Bologna BO\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Bologna address normalized perfectly\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.normalized_address).to.include('40121');",
+              "    pm.expect(jsonData.normalized_address).to.include('Bologna');",
+              "    pm.expect(jsonData.confidence).to.be.greaterThan(0.95);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Normalize - CAP Conflict Resolution",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"raw_address\": \"Via Roma 50, 20121 Milano XX\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"CAP conflict resolved correctly\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.components.provincia).to.equal('MI');",
+              "    pm.expect(jsonData.audit_log).to.satisfy(log => {",
+              "        return log.some(entry => entry.includes('conflict') || entry.includes('overridden'));",
+              "    });",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Validate - Valid Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"components\": {\n        \"street\": \"Via del Corso\",\n        \"number\": \"123\",\n        \"cap\": \"00184\",\n        \"comune\": \"Roma\",\n        \"provincia\": \"RM\",\n        \"country\": \"Italia\"\n    }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/validate",
+          "host": ["{{base_url}}"],
+          "path": ["address", "validate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Valid address passes validation\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.is_valid).to.be.true;",
+              "    pm.expect(jsonData.errors).to.be.empty;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Validate - Invalid CAP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"components\": {\n        \"street\": \"Via Roma\",\n        \"number\": \"1\",\n        \"cap\": \"99999\",\n        \"comune\": \"Milano\",\n        \"provincia\": \"MI\",\n        \"country\": \"Italia\"\n    }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/validate",
+          "host": ["{{base_url}}"],
+          "path": ["address", "validate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Invalid CAP fails validation\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.is_valid).to.be.false;",
+              "    pm.expect(jsonData.errors).to.not.be.empty;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error - Invalid Request Format",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"invalid_field\": \"test\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/address/normalize",
+          "host": ["{{base_url}}"],
+          "path": ["address", "normalize"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Invalid request returns 422\", function () {",
+              "    pm.response.to.have.status(422);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ]
+}

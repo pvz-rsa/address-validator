@@ -1,0 +1,167 @@
+[
+  {
+    "type": "city",
+    "original": "naples",
+    "translation": "Napoli"
+  },
+  {
+    "type": "city", 
+    "original": "milan",
+    "translation": "Milano"
+  },
+  {
+    "type": "city",
+    "original": "florence",
+    "translation": "Firenze"
+  },
+  {
+    "type": "city",
+    "original": "rome",
+    "translation": "Roma"
+  },
+  {
+    "type": "city",
+    "original": "turin",
+    "translation": "Torino"
+  },
+  {
+    "type": "city",
+    "original": "genoa",
+    "translation": "Genova"
+  },
+  {
+    "type": "city",
+    "original": "venice",
+    "translation": "Venezia"
+  },
+  {
+    "type": "city",
+    "original": "bologna",
+    "translation": "Bologna"
+  },
+  {
+    "type": "city",
+    "original": "palermo",
+    "translation": "Palermo"
+  },
+  {
+    "type": "city",
+    "original": "bari",
+    "translation": "Bari"
+  },
+  {
+    "type": "street",
+    "original": "square",
+    "translation": "Piazza"
+  },
+  {
+    "type": "street",
+    "original": "sq",
+    "translation": "Piazza"
+  },
+  {
+    "type": "street",
+    "original": "plaza",
+    "translation": "Piazza"
+  },
+  {
+    "type": "street",
+    "original": "place",
+    "translation": "Piazza"
+  },
+  {
+    "type": "street",
+    "original": "street",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "st",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "road",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "rd",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "avenue",
+    "translation": "Viale"
+  },
+  {
+    "type": "street",
+    "original": "ave",
+    "translation": "Viale"
+  },
+  {
+    "type": "street",
+    "original": "av",
+    "translation": "Viale"
+  },
+  {
+    "type": "street",
+    "original": "boulevard",
+    "translation": "Viale"
+  },
+  {
+    "type": "street",
+    "original": "blvd",
+    "translation": "Viale"
+  },
+  {
+    "type": "street",
+    "original": "lane",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "ln",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "way",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "drive",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "dr",
+    "translation": "Via"
+  },
+  {
+    "type": "street",
+    "original": "court",
+    "translation": "Corte"
+  },
+  {
+    "type": "street",
+    "original": "ct",
+    "translation": "Corte"
+  },
+  {
+    "type": "street",
+    "original": "circle",
+    "translation": "Piazza"
+  },
+  {
+    "type": "street",
+    "original": "localita",
+    "translation": "Località"
+  },
+  {
+    "type": "street",
+    "original": "locality",
+    "translation": "Località"
+  }
+]

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Address Normalizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        #address-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        #address-input:focus {
+            border-color: #007bff;
+        }
+        
+        #address-input:disabled {
+            background: #f8f9fa;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e1e5e9;
+            border-top: 2px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            display: none;
+        }
+        
+        .result.success {
+            background: #f8fff9;
+            border-color: #28a745;
+        }
+        
+        .result.error {
+            background: #fff8f8;
+            border-color: #dc3545;
+        }
+        
+        .normalized-address {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .validation-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .status-valid {
+            background: #28a745;
+        }
+        
+        .status-invalid {
+            background: #dc3545;
+        }
+        
+        .confidence {
+            font-size: 12px;
+            color: #888;
+            margin-left: auto;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 16px;
+        }
+        
+        .helper-text {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .issues-container {
+            margin-top: 15px;
+            padding: 12px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+        }
+        
+        .issues-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+        
+        .issues-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+        
+        .issues-list li {
+            font-size: 12px;
+            color: #856404;
+            margin-bottom: 4px;
+        }
+        
+        .issues-list li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇮🇹 Italian Address Normalizer</h1>
+        
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="address-input" 
+                placeholder="Enter Italian address and press Enter..."
+                autocomplete="off"
+            >
+            <div class="loading" id="loading"></div>
+        </div>
+        
+        <div class="helper-text">
+            Try: "Via del Corso 123, Rome" or "Piazza San Marco, Venice"
+        </div>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const input = document.getElementById('address-input');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+        const baseUrl = window.location.origin;
+
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                normalizeAddress();
+            }
+        });
+
+        async function normalizeAddress() {
+            const address = input.value.trim();
+            
+            if (!address) return;
+
+            // Show loading state
+            input.disabled = true;
+            loading.style.display = 'block';
+            result.style.display = 'none';
+
+            try {
+                const response = await fetch(`${baseUrl}/normalize`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ address: address })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showSuccess(data.formatted, data.confidence, data.issues);
+                } else {
+                    showError(data.detail || 'Failed to normalize address');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                // Hide loading state
+                input.disabled = false;
+                loading.style.display = 'none';
+            }
+        }
+
+        function showSuccess(normalizedAddress, confidence, issues = []) {
+            const confidencePercent = Math.round(confidence * 100);
+            const isValid = confidence > 0.8;
+            
+            // Create issues display
+            let issuesHtml = '';
+            if (issues && issues.length > 0) {
+                const issueMessages = issues.map(issue => {
+                    switch(issue) {
+                        case 'CITY_PROVINCE_OVERRIDDEN_BY_CAP':
+                            return 'City/province corrected using postal code';
+                        case 'CAP_UNKNOWN':
+                            return 'Postal code not recognized';
+                        case 'MULTIPLE_CAPS_FOR_COMUNE':
+                            return 'Multiple postal codes found for this city';
+                        case 'COMUNE_NOT_FOUND':
+                            return 'City not found in database';
+                        case 'INSUFFICIENT_LOCALITY':
+                            return 'Missing city or postal code information';
+                        default:
+                            return issue.replace(/_/g, ' ').toLowerCase();
+                    }
+                });
+                
+                issuesHtml = `
+                    <div class="issues-container">
+                        <div class="issues-title">What was corrected:</div>
+                        <ul class="issues-list">
+                            ${issueMessages.map(msg => `<li>${msg}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            result.className = 'result success';
+            result.innerHTML = `
+                <div class="normalized-address">${normalizedAddress}</div>
+                <div class="validation-status">
+                    <div class="status-indicator ${isValid ? 'status-valid' : 'status-invalid'}"></div>
+                    <span>${isValid ? 'Valid' : 'Needs Review'}</span>
+                    <div class="confidence">${confidencePercent}% confidence</div>
+                </div>
+                ${issuesHtml}
+            `;
+            result.style.display = 'block';
+        }
+
+        function showError(message) {
+            result.className = 'result error';
+            result.innerHTML = `<div class="error-message">${message}</div>`;
+            result.style.display = 'block';
+        }
+
+        // Focus input on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            input.focus();
+        });
+    </script>
+</body>
+</html>

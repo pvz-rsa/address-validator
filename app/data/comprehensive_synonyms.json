@@ -1,0 +1,522 @@
+[
+  {
+    "type": "city",
+    "original": "Rome",
+    "translation": "Roma"
+  },
+  {
+    "type": "city",
+    "original": "Milan",
+    "translation": "Milano"
+  },
+  {
+    "type": "city",
+    "original": "Naples",
+    "translation": "Napoli"
+  },
+  {
+    "type": "city",
+    "original": "Turin",
+    "translation": "Torino"
+  },
+  {
+    "type": "city",
+    "original": "Palermo",
+    "translation": "Palermo"
+  },
+  {
+    "type": "city",
+    "original": "Genoa",
+    "translation": "Genova"
+  },
+  {
+    "type": "city",
+    "original": "Bologna",
+    "translation": "Bologna"
+  },
+  {
+    "type": "city",
+    "original": "Florence",
+    "translation": "Firenze"
+  },
+  {
+    "type": "city",
+    "original": "Catania",
+    "translation": "Catania"
+  },
+  {
+    "type": "city",
+    "original": "Venice",
+    "translation": "Venezia"
+  },
+  {
+    "type": "city",
+    "original": "Verona",
+    "translation": "Verona"
+  },
+  {
+    "type": "city",
+    "original": "Messina",
+    "translation": "Messina"
+  },
+  {
+    "type": "city",
+    "original": "Padua",
+    "translation": "Padova"
+  },
+  {
+    "type": "city",
+    "original": "Trieste",
+    "translation": "Trieste"
+  },
+  {
+    "type": "city",
+    "original": "Taranto",
+    "translation": "Taranto"
+  },
+  {
+    "type": "city",
+    "original": "Brescia",
+    "translation": "Brescia"
+  },
+  {
+    "type": "city",
+    "original": "Prato",
+    "translation": "Prato"
+  },
+  {
+    "type": "city",
+    "original": "Parma",
+    "translation": "Parma"
+  },
+  {
+    "type": "city",
+    "original": "Modena",
+    "translation": "Modena"
+  },
+  {
+    "type": "city",
+    "original": "Reggio Emilia",
+    "translation": "Reggio Emilia"
+  },
+  {
+    "type": "city",
+    "original": "Perugia",
+    "translation": "Perugia"
+  },
+  {
+    "type": "city",
+    "original": "Livorno",
+    "translation": "Livorno"
+  },
+  {
+    "type": "city",
+    "original": "Ravenna",
+    "translation": "Ravenna"
+  },
+  {
+    "type": "city",
+    "original": "Cagliari",
+    "translation": "Cagliari"
+  },
+  {
+    "type": "city",
+    "original": "Foggia",
+    "translation": "Foggia"
+  },
+  {
+    "type": "city",
+    "original": "Rimini",
+    "translation": "Rimini"
+  },
+  {
+    "type": "city",
+    "original": "Salerno",
+    "translation": "Salerno"
+  },
+  {
+    "type": "city",
+    "original": "Ferrara",
+    "translation": "Ferrara"
+  },
+  {
+    "type": "city",
+    "original": "Sassari",
+    "translation": "Sassari"
+  },
+  {
+    "type": "city",
+    "original": "Monza",
+    "translation": "Monza"
+  },
+  {
+    "type": "city",
+    "original": "Syracuse",
+    "translation": "Siracusa"
+  },
+  {
+    "type": "city",
+    "original": "Pescara",
+    "translation": "Pescara"
+  },
+  {
+    "type": "city",
+    "original": "Bergamo",
+    "translation": "Bergamo"
+  },
+  {
+    "type": "city",
+    "original": "Trento",
+    "translation": "Trento"
+  },
+  {
+    "type": "city",
+    "original": "Bolzano",
+    "translation": "Bolzano"
+  },
+  {
+    "type": "city",
+    "original": "Vicenza",
+    "translation": "Vicenza"
+  },
+  {
+    "type": "city",
+    "original": "Terni",
+    "translation": "Terni"
+  },
+  {
+    "type": "city",
+    "original": "Bari",
+    "translation": "Bari"
+  },
+  {
+    "type": "city",
+    "original": "Ancona",
+    "translation": "Ancona"
+  },
+  {
+    "type": "city",
+    "original": "Lecce",
+    "translation": "Lecce"
+  },
+  {
+    "type": "city",
+    "original": "La Spezia",
+    "translation": "La Spezia"
+  },
+  {
+    "type": "city",
+    "original": "Udine",
+    "translation": "Udine"
+  },
+  {
+    "type": "city",
+    "original": "Como",
+    "translation": "Como"
+  },
+  {
+    "type": "city",
+    "original": "Piacenza",
+    "translation": "Piacenza"
+  },
+  {
+    "type": "city",
+    "original": "Asti",
+    "translation": "Asti"
+  },
+  {
+    "type": "city",
+    "original": "Cremona",
+    "translation": "Cremona"
+  },
+  {
+    "type": "city",
+    "original": "Novara",
+    "translation": "Novara"
+  },
+  {
+    "type": "city",
+    "original": "Agrigento",
+    "translation": "Agrigento"
+  },
+  {
+    "type": "city",
+    "original": "Brindisi",
+    "translation": "Brindisi"
+  },
+  {
+    "type": "city",
+    "original": "Cosenza",
+    "translation": "Cosenza"
+  },
+  {
+    "type": "city",
+    "original": "Alessandria",
+    "translation": "Alessandria"
+  },
+  {
+    "type": "city",
+    "original": "Catanzaro",
+    "translation": "Catanzaro"
+  },
+  {
+    "type": "city",
+    "original": "Grosseto",
+    "translation": "Grosseto"
+  },
+  {
+    "type": "city",
+    "original": "Arezzo",
+    "translation": "Arezzo"
+  },
+  {
+    "type": "city",
+    "original": "Caserta",
+    "translation": "Caserta"
+  },
+  {
+    "type": "city",
+    "original": "Ragusa",
+    "translation": "Ragusa"
+  },
+  {
+    "type": "city",
+    "original": "Siena",
+    "translation": "Siena"
+  },
+  {
+    "type": "city",
+    "original": "Cuneo",
+    "translation": "Cuneo"
+  },
+  {
+    "type": "city",
+    "original": "Pisa",
+    "translation": "Pisa"
+  },
+  {
+    "type": "city",
+    "original": "Lucca",
+    "translation": "Lucca"
+  },
+  {
+    "type": "city",
+    "original": "Treviso",
+    "translation": "Treviso"
+  },
+  {
+    "type": "city",
+    "original": "Mantua",
+    "translation": "Mantova"
+  },
+  {
+    "type": "city",
+    "original": "Reggio Calabria",
+    "translation": "Reggio Calabria"
+  },
+  {
+    "type": "city",
+    "original": "Pistoia",
+    "translation": "Pistoia"
+  },
+  {
+    "type": "city",
+    "original": "Massa",
+    "translation": "Massa"
+  },
+  {
+    "type": "city",
+    "original": "Varese",
+    "translation": "Varese"
+  },
+  {
+    "type": "city",
+    "original": "Pavia",
+    "translation": "Pavia"
+  },
+  {
+    "type": "city",
+    "original": "Trapani",
+    "translation": "Trapani"
+  },
+  {
+    "type": "city",
+    "original": "Caltanissetta",
+    "translation": "Caltanissetta"
+  },
+  {
+    "type": "city",
+    "original": "Enna",
+    "translation": "Enna"
+  },
+  {
+    "type": "city",
+    "original": "Avellino",
+    "translation": "Avellino"
+  },
+  {
+    "type": "city",
+    "original": "Benevento",
+    "translation": "Benevento"
+  },
+  {
+    "type": "city",
+    "original": "Belluno",
+    "translation": "Belluno"
+  },
+  {
+    "type": "city",
+    "original": "Rovigo",
+    "translation": "Rovigo"
+  },
+  {
+    "type": "city",
+    "original": "Pordenone",
+    "translation": "Pordenone"
+  },
+  {
+    "type": "city",
+    "original": "Gorizia",
+    "translation": "Gorizia"
+  },
+  {
+    "type": "city",
+    "original": "Imperia",
+    "translation": "Imperia"
+  },
+  {
+    "type": "city",
+    "original": "Savona",
+    "translation": "Savona"
+  },
+  {
+    "type": "city",
+    "original": "Nuoro",
+    "translation": "Nuoro"
+  },
+  {
+    "type": "city",
+    "original": "Oristano",
+    "translation": "Oristano"
+  },
+  {
+    "type": "city",
+    "original": "Matera",
+    "translation": "Matera"
+  },
+  {
+    "type": "city",
+    "original": "Potenza",
+    "translation": "Potenza"
+  },
+  {
+    "type": "city",
+    "original": "Campobasso",
+    "translation": "Campobasso"
+  },
+  {
+    "type": "city",
+    "original": "Isernia",
+    "translation": "Isernia"
+  },
+  {
+    "type": "city",
+    "original": "Aosta",
+    "translation": "Aosta"
+  },
+  {
+    "type": "city",
+    "original": "L'Aquila",
+    "translation": "L'Aquila"
+  },
+  {
+    "type": "city",
+    "original": "Chieti",
+    "translation": "Chieti"
+  },
+  {
+    "type": "city",
+    "original": "Teramo",
+    "translation": "Teramo"
+  },
+  {
+    "type": "city",
+    "original": "Ascoli Piceno",
+    "translation": "Ascoli Piceno"
+  },
+  {
+    "type": "city",
+    "original": "Macerata",
+    "translation": "Macerata"
+  },
+  {
+    "type": "city",
+    "original": "Pesaro",
+    "translation": "Pesaro"
+  },
+  {
+    "type": "city",
+    "original": "Forlì",
+    "translation": "Forlì"
+  },
+  {
+    "type": "city",
+    "original": "Sondrio",
+    "translation": "Sondrio"
+  },
+  {
+    "type": "city",
+    "original": "Lecco",
+    "translation": "Lecco"
+  },
+  {
+    "type": "city",
+    "original": "Biella",
+    "translation": "Biella"
+  },
+  {
+    "type": "city",
+    "original": "Verbania",
+    "translation": "Verbania"
+  },
+  {
+    "type": "city",
+    "original": "Vercelli",
+    "translation": "Vercelli"
+  },
+  {
+    "type": "city",
+    "original": "Crotone",
+    "translation": "Crotone"
+  },
+  {
+    "type": "city",
+    "original": "Vibo Valentia",
+    "translation": "Vibo Valentia"
+  },
+  {
+    "type": "city",
+    "original": "Frosinone",
+    "translation": "Frosinone"
+  },
+  {
+    "type": "city",
+    "original": "Latina",
+    "translation": "Latina"
+  },
+  {
+    "type": "city",
+    "original": "Rieti",
+    "translation": "Rieti"
+  },
+  {
+    "type": "city",
+    "original": "Viterbo",
+    "translation": "Viterbo"
+  },
+  {
+    "type": "city",
+    "original": "Barletta",
+    "translation": "Barletta"
+  }
+]

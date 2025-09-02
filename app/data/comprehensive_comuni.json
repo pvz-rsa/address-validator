@@ -1,0 +1,702 @@
+[
+  {
+    "comune": "L'Aquila",
+    "provincia": "AQ",
+    "caps": ["67100", "67051"]
+  },
+  {
+    "comune": "Chieti",
+    "provincia": "CH",
+    "caps": ["66100", "66034"]
+  },
+  {
+    "comune": "Pescara",
+    "provincia": "PE",
+    "caps": ["65122"]
+  },
+  {
+    "comune": "Teramo",
+    "provincia": "TE",
+    "caps": ["64100"]
+  },
+  {
+    "comune": "Avezzano",
+    "provincia": "AQ",
+    "caps": ["67051"]
+  },
+  {
+    "comune": "Lanciano",
+    "provincia": "CH",
+    "caps": ["66034"]
+  },
+  {
+    "comune": "Potenza",
+    "provincia": "PZ",
+    "caps": ["85100", "85024"]
+  },
+  {
+    "comune": "Matera",
+    "provincia": "MT",
+    "caps": ["75100", "75025"]
+  },
+  {
+    "comune": "Lavello",
+    "provincia": "PZ",
+    "caps": ["85024"]
+  },
+  {
+    "comune": "Policoro",
+    "provincia": "MT",
+    "caps": ["75025"]
+  },
+  {
+    "comune": "Cosenza",
+    "provincia": "CS",
+    "caps": ["87100", "87036"]
+  },
+  {
+    "comune": "Catanzaro",
+    "provincia": "CZ",
+    "caps": ["88100", "88046"]
+  },
+  {
+    "comune": "Crotone",
+    "provincia": "KR",
+    "caps": ["88900"]
+  },
+  {
+    "comune": "Reggio Calabria",
+    "provincia": "RC",
+    "caps": ["89127"]
+  },
+  {
+    "comune": "Vibo Valentia",
+    "provincia": "VV",
+    "caps": ["89900"]
+  },
+  {
+    "comune": "Rende",
+    "provincia": "CS",
+    "caps": ["87036"]
+  },
+  {
+    "comune": "Lamezia Terme",
+    "provincia": "CZ",
+    "caps": ["88046"]
+  },
+  {
+    "comune": "Napoli",
+    "provincia": "NA",
+    "caps": ["80121", "80142", "80053"]
+  },
+  {
+    "comune": "Salerno",
+    "provincia": "SA",
+    "caps": ["84121", "84016"]
+  },
+  {
+    "comune": "Caserta",
+    "provincia": "CE",
+    "caps": ["81100"]
+  },
+  {
+    "comune": "Avellino",
+    "provincia": "AV",
+    "caps": ["83100"]
+  },
+  {
+    "comune": "Benevento",
+    "provincia": "BN",
+    "caps": ["82100"]
+  },
+  {
+    "comune": "Castellammare di Stabia",
+    "provincia": "NA",
+    "caps": ["80053"]
+  },
+  {
+    "comune": "Pagani",
+    "provincia": "SA",
+    "caps": ["84016"]
+  },
+  {
+    "comune": "Bologna",
+    "provincia": "BO",
+    "caps": ["40121", "40122"]
+  },
+  {
+    "comune": "Modena",
+    "provincia": "MO",
+    "caps": ["41121"]
+  },
+  {
+    "comune": "Parma",
+    "provincia": "PR",
+    "caps": ["43121"]
+  },
+  {
+    "comune": "Piacenza",
+    "provincia": "PC",
+    "caps": ["29121"]
+  },
+  {
+    "comune": "Ferrara",
+    "provincia": "FE",
+    "caps": ["44121"]
+  },
+  {
+    "comune": "Ravenna",
+    "provincia": "RA",
+    "caps": ["48121"]
+  },
+  {
+    "comune": "Forlì",
+    "provincia": "FC",
+    "caps": ["47121"]
+  },
+  {
+    "comune": "Rimini",
+    "provincia": "RN",
+    "caps": ["47900"]
+  },
+  {
+    "comune": "Reggio Emilia",
+    "provincia": "RE",
+    "caps": ["42121"]
+  },
+  {
+    "comune": "Udine",
+    "provincia": "UD",
+    "caps": ["33100", "33013"]
+  },
+  {
+    "comune": "Trieste",
+    "provincia": "TS",
+    "caps": ["34121"]
+  },
+  {
+    "comune": "Pordenone",
+    "provincia": "PN",
+    "caps": ["33170"]
+  },
+  {
+    "comune": "Gorizia",
+    "provincia": "GO",
+    "caps": ["34170", "34073"]
+  },
+  {
+    "comune": "Gemona del Friuli",
+    "provincia": "UD",
+    "caps": ["33013"]
+  },
+  {
+    "comune": "Grado",
+    "provincia": "GO",
+    "caps": ["34073"]
+  },
+  {
+    "comune": "Roma",
+    "provincia": "RM",
+    "caps": ["00118", "00184", "00153", "00019"]
+  },
+  {
+    "comune": "Frosinone",
+    "provincia": "FR",
+    "caps": ["03100"]
+  },
+  {
+    "comune": "Latina",
+    "provincia": "LT",
+    "caps": ["04100"]
+  },
+  {
+    "comune": "Viterbo",
+    "provincia": "VT",
+    "caps": ["01100"]
+  },
+  {
+    "comune": "Tivoli",
+    "provincia": "RM",
+    "caps": ["00019"]
+  },
+  {
+    "comune": "Rieti",
+    "provincia": "RI",
+    "caps": ["02100"]
+  },
+  {
+    "comune": "Genova",
+    "provincia": "GE",
+    "caps": ["16121", "16122"]
+  },
+  {
+    "comune": "Imperia",
+    "provincia": "IM",
+    "caps": ["18100", "18038"]
+  },
+  {
+    "comune": "La Spezia",
+    "provincia": "SP",
+    "caps": ["19121", "19017"]
+  },
+  {
+    "comune": "Savona",
+    "provincia": "SV",
+    "caps": ["17100"]
+  },
+  {
+    "comune": "Sanremo",
+    "provincia": "IM",
+    "caps": ["18038"]
+  },
+  {
+    "comune": "Riomaggiore",
+    "provincia": "SP",
+    "caps": ["19017"]
+  },
+  {
+    "comune": "Milano",
+    "provincia": "MI",
+    "caps": ["20121", "20122"]
+  },
+  {
+    "comune": "Bergamo",
+    "provincia": "BG",
+    "caps": ["24121"]
+  },
+  {
+    "comune": "Brescia",
+    "provincia": "BS",
+    "caps": ["25121"]
+  },
+  {
+    "comune": "Como",
+    "provincia": "CO",
+    "caps": ["22100"]
+  },
+  {
+    "comune": "Cremona",
+    "provincia": "CR",
+    "caps": ["26100"]
+  },
+  {
+    "comune": "Lecco",
+    "provincia": "LC",
+    "caps": ["23900"]
+  },
+  {
+    "comune": "Mantova",
+    "provincia": "MN",
+    "caps": ["46100"]
+  },
+  {
+    "comune": "Monza",
+    "provincia": "MB",
+    "caps": ["20900"]
+  },
+  {
+    "comune": "Pavia",
+    "provincia": "PV",
+    "caps": ["27100"]
+  },
+  {
+    "comune": "Sondrio",
+    "provincia": "SO",
+    "caps": ["23100"]
+  },
+  {
+    "comune": "Varese",
+    "provincia": "VA",
+    "caps": ["21100"]
+  },
+  {
+    "comune": "Ancona",
+    "provincia": "AN",
+    "caps": ["60121"]
+  },
+  {
+    "comune": "Ascoli Piceno",
+    "provincia": "AP",
+    "caps": ["63100"]
+  },
+  {
+    "comune": "Civitanova Marche",
+    "provincia": "MC",
+    "caps": ["62012"]
+  },
+  {
+    "comune": "Pesaro",
+    "provincia": "PU",
+    "caps": ["61121", "61032"]
+  },
+  {
+    "comune": "Macerata",
+    "provincia": "MC",
+    "caps": ["62100"]
+  },
+  {
+    "comune": "Fano",
+    "provincia": "PU",
+    "caps": ["61032"]
+  },
+  {
+    "comune": "Campobasso",
+    "provincia": "CB",
+    "caps": ["86100", "86039"]
+  },
+  {
+    "comune": "Isernia",
+    "provincia": "IS",
+    "caps": ["86170", "86070"]
+  },
+  {
+    "comune": "Termoli",
+    "provincia": "CB",
+    "caps": ["86039"]
+  },
+  {
+    "comune": "Venafro",
+    "provincia": "IS",
+    "caps": ["86070"]
+  },
+  {
+    "comune": "Torino",
+    "provincia": "TO",
+    "caps": ["10121", "10122"]
+  },
+  {
+    "comune": "Arquata Scrivia",
+    "provincia": "AL",
+    "caps": ["15060"]
+  },
+  {
+    "comune": "Alessandria",
+    "provincia": "AL",
+    "caps": ["15121"]
+  },
+  {
+    "comune": "Asti",
+    "provincia": "AT",
+    "caps": ["14100"]
+  },
+  {
+    "comune": "Biella",
+    "provincia": "BI",
+    "caps": ["13900"]
+  },
+  {
+    "comune": "Cuneo",
+    "provincia": "CN",
+    "caps": ["12100"]
+  },
+  {
+    "comune": "Novara",
+    "provincia": "NO",
+    "caps": ["28100"]
+  },
+  {
+    "comune": "Verbania",
+    "provincia": "VB",
+    "caps": ["28922"]
+  },
+  {
+    "comune": "Vercelli",
+    "provincia": "VC",
+    "caps": ["13100"]
+  },
+  {
+    "comune": "Bari",
+    "provincia": "BA",
+    "caps": ["70121", "70122", "70043"]
+  },
+  {
+    "comune": "Barletta",
+    "provincia": "BT",
+    "caps": ["76121"]
+  },
+  {
+    "comune": "Brindisi",
+    "provincia": "BR",
+    "caps": ["72100", "72017"]
+  },
+  {
+    "comune": "Foggia",
+    "provincia": "FG",
+    "caps": ["71100"]
+  },
+  {
+    "comune": "Lecce",
+    "provincia": "LE",
+    "caps": ["73100"]
+  },
+  {
+    "comune": "Taranto",
+    "provincia": "TA",
+    "caps": ["74123"]
+  },
+  {
+    "comune": "Monopoli",
+    "provincia": "BA",
+    "caps": ["70043"]
+  },
+  {
+    "comune": "Ostuni",
+    "provincia": "BR",
+    "caps": ["72017"]
+  },
+  {
+    "comune": "Cagliari",
+    "provincia": "CA",
+    "caps": ["09124"]
+  },
+  {
+    "comune": "Oristano",
+    "provincia": "OR",
+    "caps": ["09170"]
+  },
+  {
+    "comune": "Sassari",
+    "provincia": "SS",
+    "caps": ["07100", "07041"]
+  },
+  {
+    "comune": "Nuoro",
+    "provincia": "NU",
+    "caps": ["08100"]
+  },
+  {
+    "comune": "Iglesias",
+    "provincia": "SU",
+    "caps": ["09016"]
+  },
+  {
+    "comune": "Alghero",
+    "provincia": "SS",
+    "caps": ["07041"]
+  },
+  {
+    "comune": "Palermo",
+    "provincia": "PA",
+    "caps": ["90121", "90122"]
+  },
+  {
+    "comune": "Agrigento",
+    "provincia": "AG",
+    "caps": ["92100"]
+  },
+  {
+    "comune": "Caltanissetta",
+    "provincia": "CL",
+    "caps": ["93100"]
+  },
+  {
+    "comune": "Catania",
+    "provincia": "CT",
+    "caps": ["95121", "95024"]
+  },
+  {
+    "comune": "Enna",
+    "provincia": "EN",
+    "caps": ["94100"]
+  },
+  {
+    "comune": "Messina",
+    "provincia": "ME",
+    "caps": ["98121", "98039"]
+  },
+  {
+    "comune": "Ragusa",
+    "provincia": "RG",
+    "caps": ["97100"]
+  },
+  {
+    "comune": "Siracusa",
+    "provincia": "SR",
+    "caps": ["96100"]
+  },
+  {
+    "comune": "Trapani",
+    "provincia": "TP",
+    "caps": ["91100"]
+  },
+  {
+    "comune": "Acireale",
+    "provincia": "CT",
+    "caps": ["95024"]
+  },
+  {
+    "comune": "Taormina",
+    "provincia": "ME",
+    "caps": ["98039"]
+  },
+  {
+    "comune": "Firenze",
+    "provincia": "FI",
+    "caps": ["50121", "50122"]
+  },
+  {
+    "comune": "Arezzo",
+    "provincia": "AR",
+    "caps": ["52100"]
+  },
+  {
+    "comune": "Grosseto",
+    "provincia": "GR",
+    "caps": ["58100"]
+  },
+  {
+    "comune": "Livorno",
+    "provincia": "LI",
+    "caps": ["57123"]
+  },
+  {
+    "comune": "Lucca",
+    "provincia": "LU",
+    "caps": ["55100"]
+  },
+  {
+    "comune": "Massa",
+    "provincia": "MS",
+    "caps": ["54100"]
+  },
+  {
+    "comune": "Pisa",
+    "provincia": "PI",
+    "caps": ["56126"]
+  },
+  {
+    "comune": "Pistoia",
+    "provincia": "PT",
+    "caps": ["51100"]
+  },
+  {
+    "comune": "Prato",
+    "provincia": "PO",
+    "caps": ["59100"]
+  },
+  {
+    "comune": "Siena",
+    "provincia": "SI",
+    "caps": ["53100"]
+  },
+  {
+    "comune": "Trento",
+    "provincia": "TN",
+    "caps": ["38122", "38066"]
+  },
+  {
+    "comune": "Bolzano",
+    "provincia": "BZ",
+    "caps": ["39100", "39012", "39031"]
+  },
+  {
+    "comune": "Riva del Garda",
+    "provincia": "TN",
+    "caps": ["38066"]
+  },
+  {
+    "comune": "Merano",
+    "provincia": "BZ",
+    "caps": ["39012"]
+  },
+  {
+    "comune": "Brunico",
+    "provincia": "BZ",
+    "caps": ["39031"]
+  },
+  {
+    "comune": "Perugia",
+    "provincia": "PG",
+    "caps": ["06121", "06081", "06049"]
+  },
+  {
+    "comune": "Terni",
+    "provincia": "TR",
+    "caps": ["05100", "05018"]
+  },
+  {
+    "comune": "Assisi",
+    "provincia": "PG",
+    "caps": ["06081"]
+  },
+  {
+    "comune": "Spoleto",
+    "provincia": "PG",
+    "caps": ["06049"]
+  },
+  {
+    "comune": "Orvieto",
+    "provincia": "TR",
+    "caps": ["05018"]
+  },
+  {
+    "comune": "Aosta",
+    "provincia": "AO",
+    "caps": ["11100", "11013", "11020", "11028"]
+  },
+  {
+    "comune": "Courmayeur",
+    "provincia": "AO",
+    "caps": ["11013"]
+  },
+  {
+    "comune": "Gressoney-Saint-Jean",
+    "provincia": "AO",
+    "caps": ["11020"]
+  },
+  {
+    "comune": "Valtournenche",
+    "provincia": "AO",
+    "caps": ["11028"]
+  },
+  {
+    "comune": "Venezia",
+    "provincia": "VE",
+    "caps": ["30121", "30122", "30016"]
+  },
+  {
+    "comune": "Verona",
+    "provincia": "VR",
+    "caps": ["37121", "37019"]
+  },
+  {
+    "comune": "Vicenza",
+    "provincia": "VI",
+    "caps": ["36100", "36061"]
+  },
+  {
+    "comune": "Treviso",
+    "provincia": "TV",
+    "caps": ["31100"]
+  },
+  {
+    "comune": "Padova",
+    "provincia": "PD",
+    "caps": ["35131"]
+  },
+  {
+    "comune": "Belluno",
+    "provincia": "BL",
+    "caps": ["32100"]
+  },
+  {
+    "comune": "Rovigo",
+    "provincia": "RO",
+    "caps": ["45100"]
+  },
+  {
+    "comune": "Jesolo",
+    "provincia": "VE",
+    "caps": ["30016"]
+  },
+  {
+    "comune": "Peschiera del Garda",
+    "provincia": "VR",
+    "caps": ["37019"]
+  },
+  {
+    "comune": "Bassano del Grappa",
+    "provincia": "VI",
+    "caps": ["36061"]
+  }
+]

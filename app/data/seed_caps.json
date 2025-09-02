@@ -1,0 +1,72 @@
+[
+  {
+    "cap": "80121",
+    "comune": "Napoli",
+    "provincia": "NA"
+  },
+  {
+    "cap": "80142",
+    "comune": "Napoli", 
+    "provincia": "NA"
+  },
+  {
+    "cap": "24121",
+    "comune": "Bergamo",
+    "provincia": "BG"
+  },
+  {
+    "cap": "15060",
+    "comune": "Arquata Scrivia",
+    "provincia": "AL"
+  },
+  {
+    "cap": "00118",
+    "comune": "Roma",
+    "provincia": "RM"
+  },
+  {
+    "cap": "00184",
+    "comune": "Roma",
+    "provincia": "RM"
+  },
+  {
+    "cap": "20121",
+    "comune": "Milano",
+    "provincia": "MI"
+  },
+  {
+    "cap": "20122",
+    "comune": "Milano",
+    "provincia": "MI"
+  },
+  {
+    "cap": "50121",
+    "comune": "Firenze",
+    "provincia": "FI"
+  },
+  {
+    "cap": "10121",
+    "comune": "Torino",
+    "provincia": "TO"
+  },
+  {
+    "cap": "16121",
+    "comune": "Genova",
+    "provincia": "GE"
+  },
+  {
+    "cap": "70121",
+    "comune": "Bari",
+    "provincia": "BA"
+  },
+  {
+    "cap": "90121",
+    "comune": "Palermo",
+    "provincia": "PA"
+  },
+  {
+    "cap": "40121",
+    "comune": "Bologna",
+    "provincia": "BO"
+  }
+]
